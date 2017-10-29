@@ -5,6 +5,8 @@ import {MessageListComponent} from './message-list.component';
 import {MessageComponent} from './message.component';
 import {MessageInpuComponent} from './message-input.component';
 
+import {MessageService} from './message.service';
+
 @NgModule({
   imports: [
     CommonModule
@@ -14,7 +16,7 @@ import {MessageInpuComponent} from './message-input.component';
     MessageComponent,
     MessageInpuComponent
   ],
-  providers: [],
+  providers: [MessageService],
   exports: [
     MessageListComponent,
     MessageComponent,
