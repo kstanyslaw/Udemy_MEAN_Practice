@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {MessageListComponent} from './message-list.component';
 import {MessageComponent} from './message.component';
+import {MessageInpuComponent} from './message-input.component';
 
 @NgModule({
   imports: [
@@ -10,12 +11,14 @@ import {MessageComponent} from './message.component';
   ],
   declarations: [
     MessageListComponent,
-    MessageComponent
+    MessageComponent,
+    MessageInpuComponent
   ],
   providers: [],
   exports: [
     MessageListComponent,
-    MessageComponent
+    MessageComponent,
+    MessageInpuComponent
   ]
 })
 export class MessageModule { }
