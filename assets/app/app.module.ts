@@ -3,18 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from "./app.component";
-import {MessageComponent} from './messages/message.component';
-import {MessageListComponent} from './messages/message-list.component';
+import {MessageModule} from './messages/message.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        MessageComponent,
-        MessageListComponent
     ],
     imports: [
       BrowserModule,
       FormsModule,
+      MessageModule
     ],
     bootstrap: [AppComponent]
 })
