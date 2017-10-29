@@ -8,5 +8,8 @@ import {Message} from './messages/message.model';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  message: Message = new Message ('Some Message', 'Stan')
+  messages: Message[] =[
+    new Message ('First Message', 'Stan'),
+    new Message ('Second Message', 'Max')
+  ]
 }
