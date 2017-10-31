@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {MessageListComponent} from './message-list.component';
 import {MessageComponent} from './message.component';
 import {MessageInpuComponent} from './message-input.component';
+import {MessagesComponent} from './messages.component';
 
 import {MessageService} from './message.service';
 
@@ -16,13 +17,15 @@ import {MessageService} from './message.service';
   declarations: [
     MessageListComponent,
     MessageComponent,
-    MessageInpuComponent
+    MessageInpuComponent,
+    MessagesComponent
   ],
   providers: [MessageService],
   exports: [
     MessageListComponent,
     MessageComponent,
-    MessageInpuComponent
+    MessageInpuComponent,
+    MessagesComponent
   ]
 })
 export class MessageModule { }
