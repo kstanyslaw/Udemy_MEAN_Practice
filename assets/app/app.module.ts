@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import {app_routing} from './app.routing';
 import { MessageModule } from './messages/message.module';
@@ -26,9 +27,10 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     app_routing,
     MessageModule,
+    HttpModule,
     // AuthenticationModule
   ],
   bootstrap: [AppComponent]

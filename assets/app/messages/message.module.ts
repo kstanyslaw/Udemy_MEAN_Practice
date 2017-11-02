@@ -18,14 +18,14 @@ import {MessageService} from './message.service';
     MessageListComponent,
     MessageComponent,
     MessageInpuComponent,
-    MessagesComponent
+    MessagesComponent,
   ],
   providers: [MessageService],
   exports: [
     MessageListComponent,
     MessageComponent,
     MessageInpuComponent,
-    MessagesComponent
+    MessagesComponent,
   ]
 })
 export class MessageModule { }
