@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {app_routing} from './app.routing';
 import { MessageModule } from './messages/message.module';
@@ -26,6 +26,7 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule
     app_routing,
     MessageModule,
     // AuthenticationModule
