@@ -10,6 +10,7 @@ import {AuthenticationComponent} from './auth/authentication.component';
 import { LogoutComponent } from './auth/logout.component';
 import {SinginComponent} from './auth/singin.component';
 import {SingupComponent} from './auth/singup.component';
+import {AuthService} from './auth/auth.service';
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from './header/header.component';
@@ -33,6 +34,7 @@ import { HeaderComponent } from './header/header.component';
     HttpModule,
     // AuthenticationModule
   ],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
