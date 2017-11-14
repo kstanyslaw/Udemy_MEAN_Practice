@@ -1,8 +1,9 @@
 var express = require('express');
 var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
 var router = express.Router();
-var User = require('../models/user');
 
+var User = require('../models/user');
 
 // Create User
 router.post('/', function(req, res, next) {
@@ -19,6 +20,36 @@ router.post('/', function(req, res, next) {
         error: err
       })
     }
+  });
+});
+
+// Singin User
+router.post('/singin', function(req, res, next) {
+  User.findOne({email: req.body.email}, function(err, user) {
+    if (err) {
+      return res.status(500).json({
+        title: 'An error occured',
+        error: err
+      })
+    }
+    if (!user) {
+      return res.status(401).json({
+        title: 'No user found',
+        error: {message: 'User could not be found'}
+      })
+    }
+    if (!bcrypt.compareSync(req.body.password, user.password)) {
+      return res.status(401).json({
+        title: 'Login failed',
+        error: {message: 'Invalid password'}
+      })
+    }
+    var token = jwt.sign({user: user}, 'secret', {expiresIn: 7200});
+    res.status(200).json({
+      message: 'Successfully logged in',
+      token: token,
+      userId: user._id
+    })
   });
 });
 
