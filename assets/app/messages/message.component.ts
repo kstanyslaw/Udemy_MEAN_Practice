@@ -11,9 +11,7 @@ import {MessageService} from './message.service';
 export class MessageComponent {
   @Input() message : Message;
 
-  constructor (private messageService: MessageService) {
-
-  };
+  constructor (private messageService: MessageService) {};
 
   onEdit() {
     this.messageService.editMessage(this.message);
@@ -24,5 +22,9 @@ export class MessageComponent {
     .subscribe(
       result => console.log(result)
     );
+  };
+
+  belongsToUser() {
+    return localStorage.getItem('userId') == this.message.userId;
   };
 }
