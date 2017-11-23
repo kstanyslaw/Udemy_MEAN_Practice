@@ -14,7 +14,7 @@ import {AuthService} from './auth/auth.service';
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from './header/header.component';
-import { ErrorComponent } from './errors/error.component';
+import { ErrorModule } from './errors/error.module';
 
 
 @NgModule({
@@ -24,8 +24,7 @@ import { ErrorComponent } from './errors/error.component';
     AuthenticationComponent,
     LogoutComponent,
     SinginComponent,
-    SingupComponent,
-    ErrorComponent
+    SingupComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +33,7 @@ import { ErrorComponent } from './errors/error.component';
     app_routing,
     MessageModule,
     HttpModule,
+    ErrorModule,
     // AuthenticationModule
   ],
   providers: [AuthService],
